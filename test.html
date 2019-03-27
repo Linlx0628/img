@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+	</head>
+	<body>
+	
+	<script type="text/javascript" src="js/jquery-1.9.0.min.js" ></script>
+	<script>
+		$(function(){
+			var reqData = {
+				client_id:"gdbs_66",
+				client_secret:"123qwe",
+				code:"67f4ea3c-55c0-4020-9ef8-472e8f542410%40node1",
+				scope:"all",
+				redirect_uri:"http://test.zftcloud.com/test.php",
+				grant_type:"authorization_code",
+				service:"initService"
+			}
+			$.ajax({
+				type:'post',
+				url:'http://tyrztest.gdbs.gov.cn/am/oauth2/access_token',
+				dataType:"json",
+	            contentType:"application/json",
+	            data:JSON.stringify(reqData),
+	            success:function(data){
+	            	console.log(data)
+	            }
+			})	
+		})
+	</script>
+	</body>
+</html>
